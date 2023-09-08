@@ -54,7 +54,7 @@ void insertMap(HashMap * mapa, char * key, void * value) {
   mapa -> buckets[indice] = createPair(key, value);
   mapa -> size++;
 
-  map -> current = indice;
+  mapa -> current = indice;
 }
 void enlarge(HashMap * map)
 {

@@ -66,3 +66,9 @@ hashmap.c:57:3: error: ‘map’ undeclared (first use in this function); did yo
 hashmap.c:57:3: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 91c7192
+Fri 08 Sep 2023 11:16:16 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  5|4
+total_score: 30/70
+81262d9
