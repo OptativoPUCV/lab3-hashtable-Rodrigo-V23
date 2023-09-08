@@ -58,7 +58,7 @@ void insertMap(HashMap * mapa, char * key, void * value)
   mapa -> size++;
   mapa -> current = indice;
 }
-void enlarge(HashMap * map)
+void enlarge(HashMap * mapa)
 {
     enlarge_called = 1; //no borrar (testing purposes)
 }
