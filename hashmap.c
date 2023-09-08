@@ -5,6 +5,7 @@
 #include <ctype.h>
 #include "hashmap.h"
 
+
 typedef struct HashMap HashMap;
 int enlarge_called=0;
 
@@ -14,12 +15,14 @@ struct HashMap {
     long capacity; //capacidad de la tabla
     long current; //indice del ultimo dato accedido
 };
+
 Pair * createPair( char * key,  void * value) {
     Pair * new = (Pair *)malloc(sizeof(Pair));
     new->key = key;
     new->value = value;
     return new;
 }
+
 long hash( char * key, long capacity) {
     unsigned long hash = 0;
      char * ptr;
@@ -28,11 +31,14 @@ long hash( char * key, long capacity) {
     }
     return hash%capacity;
 }
+
 int is_equal(void* key1, void* key2){
     if(key1==NULL || key2==NULL) return 0;
     if(strcmp((char*)key1,(char*)key2) == 0) return 1;
     return 0;
 }
+
+
 void insertMap(HashMap * map, char * key, void * value) {
 
 
@@ -45,26 +51,26 @@ void enlarge(HashMap * map) {
 }
 HashMap * createMap(long capacity)
 {
-  HashMap * map = (HashMap *)malloc(sizeof(HashMap));
+  HashMap * mapa = (HashMap *)malloc(sizeof(HashMap));
 
-  if(map == NULL)
+  if(mapa == NULL)
   {
     return NULL;
   }
-  map->buckets = (Pair **)malloc(sizeof(Pair *) * capacity);
+  mapa -> buckets = (Pair **)malloc(sizeof(Pair *) * capacity);
 
-  if(map->buckets == NULL)
+  if(mapa -> buckets == NULL)
   {
-    free(map);
+    free(mapa);
     return NULL;
   }
   for (long i = 0; i < capacity; i++)
   {
-    map->buckets[i] = NULL;
+    mapa -> buckets[i] = NULL;
   }
-  map->size = 0;
-  map->capacity = capacity;
-  map->current = -1;
+  mapa-> size = 0;
+  mapa -> capacity = capacity;
+  mapa -> current = -1;
 
   return map;
 }
