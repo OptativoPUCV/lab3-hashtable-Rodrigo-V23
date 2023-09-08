@@ -49,7 +49,7 @@ void insertMap(HashMap * mapa, char * key, void * value) {
     {
       return;
     }
-    indice = (indice + 1) % map->capacity;
+    indice = (indice + 1) % mapa -> capacity;
   }
   mapa -> buckets[indice] = createPair(key, value);
   mapa -> size++;

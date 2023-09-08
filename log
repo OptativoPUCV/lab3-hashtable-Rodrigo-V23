@@ -54,3 +54,15 @@ hashmap.c:52:29: error: ‘map’ undeclared (first use in this function); did y
 hashmap.c:52:29: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 0043af3
+Fri 08 Sep 2023 11:16:07 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:57:3: error: ‘map’ undeclared (first use in this function); did you mean ‘mapa’?
+   57 |   map -> current = indice;
+      |   ^~~
+      |   mapa
+hashmap.c:57:3: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+91c7192
