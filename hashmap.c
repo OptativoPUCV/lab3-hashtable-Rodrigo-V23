@@ -40,15 +40,15 @@ int is_equal(void* key1, void* key2)
 }
 void insertMap(HashMap * mapa, char * key, void * value)
 {
-  if (mapa == NULL || key == NULL)
+  if(mapa == NULL || key == NULL)
   {
     return;
   }
   long indice = hash(key, mapa -> capacity);
 
-  while (mapa -> buckets[indice] != NULL && mapa -> buckets[indice]->key != NULL)
+  while(mapa -> buckets[indice] != NULL && mapa -> buckets[indice]->key != NULL)
   {
-    if (is_equal(mapa -> buckets[indice]->key, key))
+    if(is_equal(mapa -> buckets[indice]->key, key))
     {
       return;
     }
@@ -92,29 +92,29 @@ void eraseMap(HashMap * map,  char * key)
 
 
 }
-Pair * searchMap(HashMap * map, char * key)
+Pair * searchMap(HashMap * mapa, char * key)
 {
-  if (map == NULL || key == NULL)
+  if(mapa == NULL || key == NULL)
   {
     return NULL;
   }
-  long index = hash(key, map->capacity);
+  long indice = hash(key, mapa -> capacity);
 
-  while (map->buckets[index] != NULL)
+  while (mapa -> buckets[indice] != NULL)
   {
-    if (is_equal(map->buckets[index]->key, key))
+    if (is_equal(mapa -> buckets[indice] -> key, key))
     {
-      map->current = index;
-      return map->buckets[index];
+      mapa -> current = indice;
+      return mapa -> buckets[indice];
     }
-    index = (index + 1) % map->capacity;
+    indice = (indice + 1) % mapa -> capacity;
 
-    if (map->buckets[index] == NULL)
+    if(mapa -> buckets[indice] == NULL)
     {
       break;
     }
   }
-  map->current = index;
+  mapa -> current = indice;
   return NULL;
 }
 Pair * firstMap(HashMap * map) {
