@@ -94,29 +94,22 @@ void eraseMap(HashMap * map,  char * key)
 }
 Pair * searchMap(HashMap * map,  char * key)
 {
-  if (map == NULL || key == NULL) {
-        return NULL; // Manejo de errores
+  if (map == NULL || key == NULL) 
+  {
+    return NULL;
+  }
+  long index = hash(key, map->capacity);
+
+  while (map->buckets[index] != NULL) 
+  {
+    if (is_equal(map->buckets[index]->key, key))
+    {
+      return map->buckets[index];
     }
+    index = (index + 1) % map->capacity;
+  }
 
-    // Aplicar la función hash a la clave para obtener la posición
-    long index = hash(key, map->capacity);
-
-    // Buscar el par en la posición calculada (considerando colisiones)
-    while (map->buckets[index] != NULL) {
-        // Comprobar si la clave coincide
-        if (is_equal(map->buckets[index]->key, key)) {
-            return map->buckets[index]; // Se encontró la clave, devuelve el par
-        }
-
-        // Avanzar circularmente al siguiente cubo
-        index = (index + 1) % map->capacity;
-    }
-
-    // La clave no se encontró en el mapa
-    
-  
 }
-
 Pair * firstMap(HashMap * map) {
 
     return NULL;
