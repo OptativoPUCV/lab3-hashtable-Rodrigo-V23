@@ -31,33 +31,30 @@ long hash( char * key, long capacity) {
     }
     return hash%capacity;
 }
-
 int is_equal(void* key1, void* key2){
     if(key1==NULL || key2==NULL) return 0;
     if(strcmp((char*)key1,(char*)key2) == 0) return 1;
     return 0;
 }
-
-
-void insertMap(HashMap * map, char * key, void * value) {
-  if (map == NULL || key == NULL)
+void insertMap(HashMap * mapa, char * key, void * value) {
+  if (mapa == NULL || key == NULL)
   {
     return;
   }
-  long index = hash(key, map->capacity);
+  long indice = hash(key, mapa -> capacity);
 
-  while (map->buckets[index] != NULL && map->buckets[index]->key != NULL)
+  while (mapa -> buckets[indice] != NULL && mapa -> buckets[indice]->key != NULL)
   {
-    if (is_equal(map->buckets[index]->key, key))
+    if (is_equal(mapa -> buckets[indice]->key, key))
     {
       return;
     }
-    index = (index + 1) % map->capacity;
+    indice = (indice + 1) % map->capacity;
   }
-  map->buckets[index] = createPair(key, value);
-  map->size++;
+  mapa -> buckets[indice] = createPair(key, value);
+  mapa -> size++;
 
-  map->current = index;
+  map -> current = indice;
 }
 void enlarge(HashMap * map)
 {

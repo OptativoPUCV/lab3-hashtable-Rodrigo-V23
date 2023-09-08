@@ -42,3 +42,15 @@ Fri 08 Sep 2023 11:05:37 PM UTC:
  tests:  5|4
 total_score: 30/70
 7c4d552
+Fri 08 Sep 2023 11:15:59 PM UTC: 
+ hashmap.c | 20 +++++++++-----------
+ 1 file changed, 9 insertions(+), 11 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:52:29: error: ‘map’ undeclared (first use in this function); did you mean ‘mapa’?
+   52 |     indice = (indice + 1) % map->capacity;
+      |                             ^~~
+      |                             mapa
+hashmap.c:52:29: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+0043af3
