@@ -70,7 +70,7 @@ void enlarge(HashMap * mapa)
   {
     if (old_buckets[i] != NULL && old_buckets[i]->key != NULL)
     {
-      insertMap(map, old_buckets[i]->key, old_buckets[i]->value);
+      insertMap(mapa, old_buckets[i]->key, old_buckets[i]->value);
     }
   }
   free(old_buckets);
