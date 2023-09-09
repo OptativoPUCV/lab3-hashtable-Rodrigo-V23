@@ -260,3 +260,9 @@ Sat 09 Sep 2023 12:34:14 AM UTC:
  tests:  17|0
 total_score: 70/70
 fefa28e
+Sat 09 Sep 2023 12:34:32 AM UTC: 
+ hashmap.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+ tests:  17|0
+total_score: 70/70
+7c0bdb0
