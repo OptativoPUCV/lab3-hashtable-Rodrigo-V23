@@ -34,17 +34,16 @@ long hash( char * key, long capacity)
 }
 int is_equal(void* key1, void* key2)
 {
-  if(key1==NULL || key2==NULL) return 0;
+  if(key1 == NULL || key2 == NULL) return 0;
   if(strcmp((char*)key1,(char*)key2) == 0) return 1;
   return 0;
 }
 void insertMap(HashMap * mapa, char * key, void * value)
 {
   long indice = hash(key, mapa -> capacity);
-
-  while(mapa -> buckets[indice] != NULL && mapa -> buckets[indice]->key != NULL)
+  while(mapa -> buckets[indice] != NULL && mapa -> buckets[indice] -> key != NULL)
   {
-    if(is_equal(mapa -> buckets[indice]->key, key))
+    if(is_equal(mapa -> buckets[indice] -> key, key))
     {
       return;
     }
@@ -62,10 +61,7 @@ HashMap * createMap(long capacity)
 {
   HashMap * mapa = (HashMap *)malloc(sizeof(HashMap));
 
-  if(mapa == NULL)
-  {
-    return NULL;
-  }
+ 
   mapa -> buckets = (Pair **)malloc(sizeof(Pair *) * capacity);
 
   if(mapa -> buckets == NULL)
