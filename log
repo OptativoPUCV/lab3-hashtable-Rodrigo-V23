@@ -178,3 +178,15 @@ hashmap.c:56:6: note: previous definition of ‘enlarge’ with type ‘void(Has
       |      ^~~~~~~
 Compilation failed
 58d5993
+Sat 09 Sep 2023 12:29:13 AM UTC: 
+ hashmap.c | 42 +++++++++++++++++++-----------------------
+ 1 file changed, 19 insertions(+), 23 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:58:25: error: ‘map’ undeclared (first use in this function); did you mean ‘mapa’?
+   58 |   Pair ** old_buckets = map->buckets;
+      |                         ^~~
+      |                         mapa
+hashmap.c:58:25: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+2bd1f9c
