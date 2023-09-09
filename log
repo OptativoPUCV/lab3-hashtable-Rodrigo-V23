@@ -190,3 +190,15 @@ hashmap.c:58:25: error: ‘map’ undeclared (first use in this function); did y
 hashmap.c:58:25: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 2bd1f9c
+Sat 09 Sep 2023 12:29:46 AM UTC: 
+ hashmap.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:73:17: error: ‘map’ undeclared (first use in this function); did you mean ‘mapa’?
+   73 |       insertMap(map, old_buckets[i]->key, old_buckets[i]->value);
+      |                 ^~~
+      |                 mapa
+hashmap.c:73:17: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+c259047

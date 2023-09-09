@@ -55,18 +55,18 @@ void insertMap(HashMap * mapa, char * key, void * value)
 }
 void enlarge(HashMap * mapa)
 {
-  Pair ** old_buckets = map->buckets;
-  map->capacity *= 2;
-  map->buckets = (Pair **)malloc(sizeof(Pair *) * map->capacity);
+  Pair ** old_buckets = mapa -> buckets;
+  mapa -> capacity *= 2;
+  mapa -> buckets = (Pair **)malloc(sizeof(Pair *) * mapa -> capacity);
 
-  if (map->buckets == NULL) {
+  if (mapa -> buckets == NULL) {
 
-      map->capacity /= 2;
+      mapa -> capacity /= 2;
       return;
   }
-  map->size = 0;
+  mapa -> size = 0;
 
-  for (long i = 0; i < map->capacity / 2; i++)
+  for (long i = 0; i < mapa -> capacity / 2; i++)
   {
     if (old_buckets[i] != NULL && old_buckets[i]->key != NULL)
     {
