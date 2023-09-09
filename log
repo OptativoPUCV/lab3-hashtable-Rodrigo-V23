@@ -166,3 +166,15 @@ hashmap.c:56:6: note: previous definition of ‘enlarge’ with type ‘void(Has
       |      ^~~~~~~
 Compilation failed
 fad10e2
+Sat 09 Sep 2023 12:27:24 AM UTC: 
+ hashmap.c | 24 ++++++++----------------
+ 1 file changed, 8 insertions(+), 16 deletions(-)
+In file included from test.c:4:
+hashmap.c:133:6: error: redefinition of ‘enlarge’
+  133 | void enlarge(HashMap * map)
+      |      ^~~~~~~
+hashmap.c:56:6: note: previous definition of ‘enlarge’ with type ‘void(HashMap *)’ {aka ‘void(struct HashMap *)’}
+   56 | void enlarge(HashMap * mapa)
+      |      ^~~~~~~
+Compilation failed
+58d5993
