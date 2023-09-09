@@ -154,3 +154,15 @@ Sat 09 Sep 2023 12:12:31 AM UTC:
  tests:  11|2
 total_score: 50/70
 64f257d
+Sat 09 Sep 2023 12:26:17 AM UTC: 
+ hashmap.c | 35 ++++++++++++++++++++++++++++++++++-
+ 1 file changed, 34 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c:133:6: error: redefinition of ‘enlarge’
+  133 | void enlarge(HashMap * map) {
+      |      ^~~~~~~
+hashmap.c:56:6: note: previous definition of ‘enlarge’ with type ‘void(HashMap *)’ {aka ‘void(struct HashMap *)’}
+   56 | void enlarge(HashMap * mapa)
+      |      ^~~~~~~
+Compilation failed
+fad10e2
