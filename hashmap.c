@@ -40,10 +40,6 @@ int is_equal(void* key1, void* key2)
 }
 void insertMap(HashMap * mapa, char * key, void * value)
 {
-  if(mapa == NULL || key == NULL)
-  {
-    return;
-  }
   long indice = hash(key, mapa -> capacity);
 
   while(mapa -> buckets[indice] != NULL && mapa -> buckets[indice]->key != NULL)
@@ -89,9 +85,7 @@ HashMap * createMap(long capacity)
 }
 void eraseMap(HashMap * map,  char * key)
 {    
-
   long index = hash(key, map->capacity);
-
   while (map->buckets[index] != NULL)
   {
     if (is_equal(map->buckets[index]->key, key))
